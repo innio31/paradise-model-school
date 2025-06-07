@@ -113,7 +113,7 @@
   </style>
 </head>
 <body>
-  <!-- Navigation (Consistent with other pages) -->
+  <!-- Navigation (Same as homepage) -->
   <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: var(--primary-color);">
     <div class="container">
       <a class="navbar-brand" href="index.html">
@@ -130,15 +130,15 @@
               About Us
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="history.html">History</a></li>
+              <li><a class="dropdown-item active" href="history.html">History</a></li>
               <li><a class="dropdown-item" href="mission.html">Mission & Vision</a></li>
               <li><a class="dropdown-item" href="director.html">Director</a></li>
-              <li><a class="dropdown-item active" href="staff.html">Our Staff</a></li>
+              <li><a class="dropdown-item" href="staff.html">Staff</a></li>
             </ul>
           </li>
-<li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle" href="academics.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Academics
+          <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="portal.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Portals
   </a>
   <ul class="dropdown-menu">
     <li><a class="dropdown-item" href="login.html">Student Portal</a></li>
@@ -146,12 +146,13 @@
     <li><a class="dropdown-item" href="staff-portal.html">Staff Portal</a></li>
   </ul>
 </li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li><a class="nav-item"><a class="nav-link" href="anniversary.html">25th Anniversary</a></li>
+<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
       </div>
     </div>
   </nav>
-  
+
   <!-- Hero Section -->
   <section class="hero-section text-center">
     <div class="container position-relative" style="z-index: 1;">
@@ -394,76 +395,5 @@
       });
     });
   </script>
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- ADD THIS NEW SCRIPT HERE -->
-<script>
-// App Configuration
-const APP_CONFIG = {
-  student: {
-    deepLink: 'skoolconnect://student',
-    android: 'https://play.google.com/store/apps/details?id=com.skoolconnect.student',
-    ios: 'https://apps.apple.com/app/skoolconnect-student/id123456',
-    web: 'https://student.skoolconnect.com'
-  },
-  parent: {
-    deepLink: 'skoolconnect://parent',
-    android: 'https://play.google.com/store/apps/details?id=com.skoolconnect.parent',
-    ios: 'https://apps.apple.com/app/skoolconnect-parent/id789012',
-    web: 'https://parent.skoolconnect.com'
-  },
-  staff: {
-    deepLink: 'klacify://staff',
-    android: 'https://play.google.com/store/apps/details?id=com.klacify.staff',
-    ios: 'https://apps.apple.com/app/klacify-staff/id345678',
-    web: 'https://staff.klacify.com'
-  }
-};
-
-function redirectToApp(portalType) {
-  const config = APP_CONFIG[portalType] || APP_CONFIG.student;
-  let timer = null;
-  
-  // Try to open the app directly
-  window.location.href = config.deepLink;
-  
-  // Set a timer as fallback
-  timer = setTimeout(function() {
-    if (!document.hidden) {
-      redirectToStoreOrWeb(config);
-    }
-  }, 800);
-  
-  // Reset timer if page gets hidden (meaning app opened successfully)
-  document.addEventListener('visibilitychange', function() {
-    if (document.hidden) {
-      clearTimeout(timer);
-    }
-  });
-}
-
-function redirectToStoreOrWeb(config) {
-  const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-  
-  // Android detection
-  if (/android/i.test(userAgent)) {
-    window.location.href = config.android;
-    return;
-  }
-  
-  // iOS detection
-  if (/iPad|iPhone|iPod/.test(userAgent)) {
-    window.location.href = config.ios;
-    return;
-  }
-  
-  // Desktop or unknown device - open web version
-  window.location.href = config.web;
-}
-</script>
-<!-- ======= End of Script ======= -->
 </body>
 </html>
-</body>
-              </html>
