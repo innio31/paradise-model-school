@@ -8,56 +8,53 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary-color: #2c3e50;
-      --secondary-color: #e74c3c;
       --accent-color: #3498db;
     }
     
     body {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f8f9fa;
     }
     
-    .portal-header {
+    .login-header {
       background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), 
                   url('https://via.placeholder.com/1920x600?text=Student+Login') center/cover;
       color: white;
-      padding: 120px 0 80px;
+      padding: 100px 0;
     }
     
-    .login-box {
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+    .login-card {
       max-width: 500px;
-      margin: 0 auto;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      border: none;
     }
     
-    .btn-portal {
+    .btn-login {
       background-color: var(--accent-color);
       color: white;
       font-weight: 600;
+      padding: 10px;
     }
   </style>
 </head>
 <body>
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: var(--primary-color);">
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: var(--primary-color);">
     <div class="container">
       <a class="navbar-brand" href="index.html">
-        <i class="fas fa-school me-2"></i>Paradise Model School
+        <i class="fas fa-school me-2"></i> Paradise Model School
       </a>
     </div>
   </nav>
 
   <!-- Login Header -->
-  <header class="portal-header text-center">
+  <header class="login-header text-center">
     <div class="container">
-      <h1 class="display-4 fw-bold mb-3">Student Portal</h1>
+      <h1 class="display-5 fw-bold mb-3">Student Portal</h1>
       <p class="lead">Sign in to access your dashboard</p>
     </div>
   </header>
@@ -65,10 +62,12 @@
   <!-- Login Form -->
   <section class="py-5">
     <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <div class="login-box p-4 p-md-5">
-            <h3 class="text-center mb-4"><i class="fas fa-sign-in-alt me-2"></i>Student Login</h3>
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+          <div class="login-card card p-4 p-md-5">
+            <h3 class="text-center mb-4">
+              <i class="fas fa-sign-in-alt me-2"></i> Student Login
+            </h3>
             <form id="studentLoginForm">
               <div class="mb-3">
                 <label for="studentId" class="form-label">Student ID</label>
@@ -82,8 +81,8 @@
                 <input type="checkbox" class="form-check-input" id="rememberMe">
                 <label class="form-check-label" for="rememberMe">Remember me</label>
               </div>
-              <button type="submit" class="btn btn-portal w-100 py-2">
-                <span id="loginText">Login</span>
+              <button type="submit" class="btn btn-login w-100" id="loginBtn">
+                <span id="loginBtnText">Login</span>
                 <span id="loginSpinner" class="spinner-border spinner-border-sm d-none"></span>
               </button>
               <div class="text-center mt-3">
@@ -97,50 +96,67 @@
   </section>
 
   <!-- Footer -->
-  <footer class="py-4 bg-dark text-white">
+  <footer class="bg-dark text-white py-4">
     <div class="container text-center">
-      <p class="mb-0">&copy; 2025 Paradise Model School</p>
+      <p class="mb-0">&copy; 2025 Paradise Model School. All rights reserved.</p>
     </div>
   </footer>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  
+
   <!-- Login Script -->
   <script>
     document.getElementById('studentLoginForm').addEventListener('submit', async (e) => {
-  e.preventDefault();
-  
-  const btn = e.target.querySelector('button[type="submit"]');
-  btn.disabled = true;
-  btn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status"></span> Logging in...';
+      e.preventDefault();
+      
+      const btn = document.getElementById('loginBtn');
+      const spinner = document.getElementById('loginSpinner');
+      const btnText = document.getElementById('loginBtnText');
+      
+      // Show loading state
+      btn.disabled = true;
+      spinner.classList.remove('d-none');
+      btnText.textContent = 'Authenticating...';
+      
+      try {
+        const response = await fetch('/.netlify/functions/auth/login', {
+          method: 'POST',
+          headers: { 
+            'Content-Type': 'application/json' 
+          },
+          body: JSON.stringify({
+            studentId: document.getElementById('studentId').value,
+            password: document.getElementById('password').value
+          })
+        });
 
-  try {
-    const response = await fetch('/.netlify/functions/auth/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        studentId: document.getElementById('studentId').value,
-        password: document.getElementById('password').value
-      })
+        const data = await response.json();
+        
+        if (!response.ok) {
+          throw new Error(data.error || 'Login failed');
+        }
+        
+        // Save token and redirect
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('user', JSON.stringify(data.user));
+        window.location.href = '/student-portal/';
+        
+      } catch (err) {
+        console.error('Login error:', err);
+        alert(err.message || 'Login failed. Please try again.');
+      } finally {
+        // Reset button state
+        btn.disabled = false;
+        spinner.classList.add('d-none');
+        btnText.textContent = 'Login';
+      }
     });
 
-    const data = await response.json();
-    console.log("Login response:", data); // Check browser console
-
-    if (!response.ok) throw new Error(data.error || 'Login failed');
-    
-    localStorage.setItem('token', data.token);
-    window.location.href = '/student-portal/';
-    
-  } catch (err) {
-    console.error("Login error:", err);
-    alert(err.message || "Login failed. Please try again.");
-  } finally {
-    btn.disabled = false;
-    btn.textContent = 'Login';
-  }
-});
+    // Check if already logged in
+    if (localStorage.getItem('token')) {
+      window.location.href = '/student-portal/';
+    }
   </script>
 </body>
-</html>
+  </html>
