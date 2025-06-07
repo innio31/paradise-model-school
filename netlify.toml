@@ -1,0 +1,6 @@
+[build]
+  functions = "functions"
+  command = "npm install bcryptjs jsonwebtoken"
+
+[build.environment]
+  NODE_VERSION = "16"
