@@ -1,0 +1,9 @@
+[
+  {
+    "studentId": "PMS20230001",
+    "name": "Test Student",
+    "password": "$2a$10$N9qo8uLOickgx2ZMRZoMy.MrYV7Z1Q1QHvCUrV3sQeO7p1JjwJQfO", // hashed "test123"
+    "grade": "12",
+    "section": "A"
+  }
+]

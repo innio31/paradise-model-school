@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Director's Message | Paradise</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #2c3e50;
+      --secondary-color: #3498db;
+      --accent-color: #e74c3c;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
+      line-height: 1.6;
+    }
+    
+    .director-header {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                  url('https://via.placeholder.com/1920x600?text=School+Campus') center/cover;
+      color: white;
+      padding: 100px 0;
+      margin-bottom: 50px;
+    }
+    
+    .director-card {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    
+    .director-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .director-img {
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .director-quote {
+      position: relative;
+      padding-left: 30px;
+      border-left: 4px solid var(--secondary-color);
+      font-style: italic;
+    }
+    
+    .director-signature {
+      font-family: 'Brush Script MT', cursive;
+      font-size: 1.8rem;
+      color: var(--primary-color);
+    }
+    
+    .achievement-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+    
+    .achievement-icon {
+      background-color: var(--secondary-color);
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    
+    @media (max-width: 768px) {
+      .director-img-container {
+        height: 400px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation (Consistent with other pages) -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: var(--primary-color);">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <i class="fas fa-school me-2"></i>Paradise Model School
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown">
+              About Us
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="history.html">History</a></li>
+              <li><a class="dropdown-item" href="mission.html">Mission & Vision</a></li>
+              <li><a class="dropdown-item active" href="director.html">Director's Message</a></li>
+              <li><a class="dropdown-item" href="staff.html">Staff</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="academics.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Academics
+  </a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="login.html">Student Portal</a></li>
+    <li><a class="dropdown-item" href="parent-portal.html">Parent Portal</a></li>
+    <li><a class="dropdown-item" href="staff-portal.html">Staff Portal</a></li>
+  </ul>
+</li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="director-header text-center">
+    <div class="container">
+      <h1 class="display-3 fw-bold">Director's Message</h1>
+      <p class="lead">Leadership with vision and dedication</p>
+    </div>
+  </header>
+
+  <!-- Director Profile Section -->
+  <section class="py-5">
+    <div class="container">
+      <div class="director-card">
+        <div class="row g-0">
+          <div class="col-lg-4 director-img-container">
+            <img src="images/director.jpg" alt="Director" class="director-img w-100 h-100">
+          </div>
+          <div class="col-lg-8">
+            <div class="p-4 p-lg-5">
+              <h2 class="mb-3" style="color: var(--primary-color);">Mr Abolade Ezekiel Kayode</h2>
+              <h5 class="text-muted mb-4">Director, Paradise Model School</h5>
+              
+              <div class="director-quote mb-4">
+                <p class="lead">"Education is not the filling of a pail, but the lighting of a fire. At Paradise, we strive to ignite that spark of curiosity in every student."</p>
+              </div>
+              
+              <div class="mb-4">
+                <p>With over 25 years of experience in educational leadership, Mr Abolade has guided Paradise Model School to become one of the most respected institutions in the region. His philosophy centers on creating an environment where academic rigor meets creative exploration.</p>
+                <p>Under his direction, our school has implemented innovative programs like the Coding and the Digital Literacy Curriculum, preparing students for the challenges of the 21st century.</p>
+              </div>
+              
+              <div class="director-signature mb-4">Abolade E. O.</div>
+              
+              <div class="d-flex gap-3">
+                <a href="https://wa.me/+2348161535108" class="btn btn-primary">
+                  <i class="fas fa-envelope me-2"></i>Contact Director
+                </a>
+                <a href="#" class="btn btn-outline-secondary">
+                  <i class="fas fa-file-pdf me-2"></i>Download CV
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Director's Message Section -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h2 class="text-center mb-5" style="color: var(--primary-color);">A Message to Our School Community</h2>
+          
+          <div class="mb-5">
+            <p>Dear Students, Parents, and Well-wishers,</p>
+            <p>It is my privilege to welcome you to Paradise Model School, where we believe in nurturing not just scholars, but well-rounded individuals equipped to make meaningful contributions to society.</p>
+            <p>In our rapidly evolving world, education must extend beyond textbooks. That's why we emphasize:</p>
+            
+            <ul class="mb-4">
+              <li class="mb-2">Critical thinking over rote memorization</li>
+              <li class="mb-2">Character development alongside academic achievement</li>
+              <li class="mb-2">Technology integration with human values</li>
+            </ul>
+      
+            <p>I invite you to partner with us in this transformative educational experience.</p>
+          </div>
+          
+          <div class="text-end">
+            <p>With warm regards,</p>
+            <div class="director-signature">Mr. Abolade E. O.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Professional Achievements -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-5" style="color: var(--primary-color);">Professional Highlights</h2>
+      
+      <div class="row">
+        <div class="col-md-6">
+          <div class="achievement-item">
+            <div class="achievement-icon">
+              <i class="fas fa-award"></i>
+            </div>
+            <div>
+              <h5>National Education Award 2022</h5>
+              <p class="text-muted">Recognized for innovative curriculum development in STEM education</p>
+            </div>
+          </div>
+          
+          <div class="achievement-item">
+            <div class="achievement-icon">
+              <i class="fas fa-book"></i>
+            </div>
+            <div>
+              <h5>Published Author</h5>
+              <p class="text-muted">"Rethinking Secondary Education" (2020) used in teacher training programs nationwide</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6">
+          <div class="achievement-item">
+            <div class="achievement-icon">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <div>
+              <h5>25+ Years Experience</h5>
+              <p class="text-muted">Served as teacher, principal, and educational consultant before directorship</p>
+            </div>
+          </div>
+          
+          <div class="achievement-item">
+            <div class="achievement-icon">
+              <i class="fas fa-globe"></i>
+            </div>
+            <div>
+              <h5>International Speaker</h5>
+              <p class="text-muted">Keynote addresses at 12 international education conferences</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer (Consistent with other pages) -->
+  <footer class="py-4 bg-dark text-white">
+    <div class="container text-center">
+      <p>&copy; 2025 Paradise Model School. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

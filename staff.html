@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Staff | Paradise</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #2c3e50;
+      --secondary-color: #3498db;
+      --accent-color: #e74c3c;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
+    }
+    
+    .staff-header {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                  url('https://via.placeholder.com/1920x600?text=School+Staff') center/cover;
+      color: white;
+      padding: 100px 0;
+      margin-bottom: 50px;
+    }
+    
+    .staff-card {
+      border: none;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+      height: 100%;
+    }
+    
+    .staff-card:hover {
+      transform: translateY(-10px);
+    }
+    
+    .staff-img {
+      height: 250px;
+      object-fit: cover;
+      object-position: top;
+    }
+    
+    .staff-position {
+      color: var(--secondary-color);
+      font-weight: 600;
+    }
+    
+    .department-header {
+      position: relative;
+      margin: 60px 0 30px;
+      text-align: center;
+    }
+    
+    .department-header h2 {
+      display: inline-block;
+      background: white;
+      padding: 0 20px;
+      position: relative;
+      z-index: 1;
+      color: var(--primary-color);
+    }
+    
+    .department-header::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: #ddd;
+      z-index: 0;
+    }
+    
+    .social-links a {
+      color: var(--primary-color);
+      margin: 0 5px;
+      transition: color 0.3s;
+    }
+    
+    .social-links a:hover {
+      color: var(--secondary-color);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation (Consistent with other pages) -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: var(--primary-color);">
+    <div class="container">
+      <a class="navbar-brand" href="home.html">
+        <i class="fas fa-school me-2"></i>Paradise Model School
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown">
+              About Us
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="history.html">History</a></li>
+              <li><a class="dropdown-item" href="mission.html">Mission & Vision</a></li>
+              <li><a class="dropdown-item" href="director.html">Director</a></li>
+              <li><a class="dropdown-item active" href="staff.html">Our Staff</a></li>
+            </ul>
+          </li>
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="academics.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Academics
+  </a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="login.html">Student Portal</a></li>
+    <li><a class="dropdown-item" href="parent-portal.html">Parent Portal</a></li>
+    <li><a class="dropdown-item" href="staff-portal.html">Staff Portal</a></li>
+  </ul>
+</li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="staff-header text-center">
+    <div class="container">
+      <h1 class="display-3 fw-bold">Meet Our Staff</h1>
+      <p class="lead">Dedicated professionals shaping young minds</p>
+    </div>
+  </header>
+
+  <!-- Leadership Team -->
+  <section class="py-5">
+    <div class="container">
+      <div class="department-header">
+        <h2>Leadership Team</h2>
+      </div>
+      
+      <div class="row g-4">
+        <!-- Staff 1 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="staff-card">
+            <img src="https://via.placeholder.com/300x400?text=Principal" class="staff-img w-100" alt="administrator">
+            <div class="p-3">
+              <h5 class="mb-1">Miss Adeshina </h5>
+              <p class="staff-position mb-2">Administrator</p>
+              <p class="small text-muted">PhD in Educational Leadership, 18 years experience</p>
+              <div class="social-links mt-2">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Staff 2 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="staff-card">
+            <img src="images/principal.jpg" class="staff-img w-100" alt="Principal">
+            <div class="p-3">
+              <h5 class="mb-1">Mr. Ademuyiwa E. I.</h5>
+              <p class="staff-position mb-2">Principal</p>
+              <p class="small text-muted">B.Tech, Information Technology (<em>in view</em>), OND, Business Administration and Management, Cisco Certified Instructor</p>
+              <div class="social-links mt-2">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+  <!-- Academic Department -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="department-header">
+        <h2>Academic Department</h2>
+      </div>
+      
+      <div class="row g-4">
+        <!-- Staff 1 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="staff-card">
+            <img src="https://via.placeholder.com/300x400?text=Science+HOD" class="staff-img w-100" alt="Science HOD">
+            <div class="p-3">
+              <h5 class="mb-1">Dr. Emily Zhang</h5>
+              <p class="staff-position mb-2">Head of Science</p>
+              <p class="small text-muted">PhD in Biochemistry, Research Scientist</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Staff 2 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="staff-card">
+            <img src="https://via.placeholder.com/300x400?text=Math+HOD" class="staff-img w-100" alt="Math HOD">
+            <div class="p-3">
+              <h5 class="mb-1">Mr. Robert Brown</h5>
+              <p class="staff-position mb-2">Head of Mathematics</p>
+              <p class="small text-muted">M.Sc in Applied Mathematics, 12 years experience</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Staff 3 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="staff-card">
+            <img src="https://via.placeholder.com/300x400?text=Humanities+HOD" class="staff-img w-100" alt="Humanities HOD">
+            <div class="p-3">
+              <h5 class="mb-1">Mrs. Fatima Al-Mansoori</h5>
+              <p class="staff-position mb-2">Head of Humanities</p>
+              <p class="small text-muted">Author and Historian, MA in World Literature</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Staff 4 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="staff-card">
+            <img src="https://via.placeholder.com/300x400?text=Languages+HOD" class="staff-img w-100" alt="Languages HOD">
+            <div class="p-3">
+              <h5 class="mb-1">Ms. Sophia Rodriguez</h5>
+              <p class="staff-position mb-2">Head of Languages</p>
+              <p class="small text-muted">Fluent in 5 languages, Cambridge certified</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Support Staff -->
+  <section class="py-5">
+    <div class="container">
+      <div class="department-header">
+        <h2>Support Staff</h2>
+      </div>
+      
+      <div class="row g-4">
+        <!-- Staff 1 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="staff-card">
+            <img src="https://via.placeholder.com/300x400?text=Librarian" class="staff-img w-100" alt="Librarian">
+            <div class="p-3">
+              <h5 class="mb-1">Mrs. Margaret O'Connor</h5>
+              <p class="staff-position mb-2">Head Librarian</p>
+              <p class="small text-muted">MLIS, Digital resources specialist</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Staff 2 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="staff-card">
+            <img src="https://via.placeholder.com/300x400?text=Counselor" class="staff-img w-100" alt="Counselor">
+            <div class="p-3">
+              <h5 class="mb-1">Mr. Thomas Wright</h5>
+              <p class="staff-position mb-2">School Counselor</p>
+              <p class="small text-muted">Licensed therapist, Career guidance expert</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Staff 3 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="staff-card">
+            <img src="https://via.placeholder.com/300x400?text=IT+Director" class="staff-img w-100" alt="IT Director">
+            <div class="p-3">
+              <h5 class="mb-1">Mr. Alan Turing</h5>
+              <p class="staff-position mb-2">IT Director</p>
+              <p class="small text-muted">Network security, EdTech integration</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Staff 4 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="staff-card">
+            <img src="https://via.placeholder.com/300x400?text=Nurse" class="staff-img w-100" alt="School Nurse">
+            <div class="p-3">
+              <h5 class="mb-1">Mrs. Jennifer Hayes</h5>
+              <p class="staff-position mb-2">School Nurse</p>
+              <p class="small text-muted">RN with pediatric specialization</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Join Our Team CTA -->
+  <section class="py-5 bg-primary text-white">
+    <div class="container text-center">
+      <h2 class="mb-4">Interested in Joining Our Team?</h2>
+      <p class="lead mb-4">We're always looking for passionate educators and staff members</p>
+      <a href="contact.html" class="btn btn-light btn-lg">View Current Openings</a>
+    </div>
+  </section>
+
+  <!-- Footer (Consistent with other pages) -->
+  <footer class="py-4 bg-dark text-white">
+    <div class="container text-center">
+      <p>&copy; 2025 Paradise Model School. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

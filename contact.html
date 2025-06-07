@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Paradise</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #2c3e50;
+      --secondary-color: #3498db;
+      --accent-color: #e74c3c;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
+    }
+    
+    .contact-header {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                  url('https://via.placeholder.com/1920x600?text=School+Contact') center/cover;
+      color: white;
+      padding: 100px 0;
+      margin-bottom: 50px;
+    }
+    
+    .contact-card {
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+      height: 100%;
+      border: none;
+    }
+    
+    .contact-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .contact-icon {
+      width: 60px;
+      height: 60px;
+      background-color: var(--secondary-color);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 1.5rem;
+    }
+    
+    .social-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: var(--primary-color);
+      color: white;
+      border-radius: 50%;
+      margin-right: 10px;
+      transition: background-color 0.3s;
+    }
+    
+    .social-icon:hover {
+      background-color: var(--secondary-color);
+      text-decoration: none;
+    }
+    
+    .map-container {
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .form-control:focus {
+      border-color: var(--secondary-color);
+      box-shadow: 0 0 0 0.25rem rgba(52, 152, 219, 0.25);
+    }
+    
+    .btn-primary {
+      background-color: var(--secondary-color);
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation (Consistent with other pages) -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: var(--primary-color);">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <i class="fas fa-school me-2"></i>Paradise Model School
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown">
+              About Us
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="history.html">History</a></li>
+              <li><a class="dropdown-item" href="mission.html">Mission & Vision</a></li>
+              <li><a class="dropdown-item" href="director.html">Director</a></li>
+              <li><a class="dropdown-item active" href="staff.html">Our Staff</a></li>
+            </ul>
+          </li>
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="academics.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Academics
+  </a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="login.html">Student Portal</a></li>
+    <li><a class="dropdown-item" href="parent-portal.html">Parent Portal</a></li>
+    <li><a class="dropdown-item" href="staff-portal.html">Staff Portal</a></li>
+  </ul>
+</li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="contact-header text-center">
+    <div class="container">
+      <h1 class="display-3 fw-bold">Contact Us</h1>
+      <p class="lead">We'd love to hear from you</p>
+    </div>
+  </header>
+
+  <!-- Contact Information -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Address -->
+        <div class="col-md-4">
+          <div class="contact-card p-4 text-center h-100">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <h3>Address</h3>
+            <p class="mb-0">18, Ilasa Road, Off Adebisi,<br>Iyesi, Ota,<br>Ogun State, Nigeria</p>
+          </div>
+        </div>
+        
+        <!-- Contact -->
+        <div class="col-md-4">
+          <div class="contact-card p-4 text-center h-100">
+            <div class="contact-icon">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <h3>Phone & Email</h3>
+            <p class="mb-1"><strong>Main Office:</strong> (234) 456-7890</p>
+            <p class="mb-1"><strong>Admissions:</strong> (234) 903 544 8295</p>
+            <p class="mb-0"><strong>Email:</strong> info@paradisemodelschool.edu<br>paradisemodelschool73@gmail.com</p>
+          </div>
+        </div>
+        
+        <!-- Hours -->
+        <div class="col-md-4">
+          <div class="contact-card p-4 text-center h-100">
+            <div class="contact-icon">
+              <i class="far fa-clock"></i>
+            </div>
+            <h3>Office Hours</h3>
+            <p class="mb-1"><strong>Monday-Friday:</strong> 8:00 AM - 5:00 PM</p>
+            <p class="mb-1"><strong>Saturday:</strong>9:00 AM - 1:00 PM</p>
+            <p class="mb-0"><strong>Sunday:</strong> Closed</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form + Map -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Contact Form -->
+        <div class="col-lg-6">
+          <h2 class="mb-4">Send Us a Message</h2>
+          <form id="contactForm" action="https://formsubmit.co/immanuelsamade@gmail.com method="POST">
+            <!-- FormSubmit.co will handle sending to your email -->
+            <input type="hidden" name="_subject" value="New Contact Form Submission">
+            <input type="hidden" name="_autoresponse" value="Thank you for contacting Greenwood High. We'll get back to you within 24 hours.">
+            
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="name" class="form-label">Full Name*</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+              </div>
+              <div class="col-md-6">
+                <label for="email" class="form-label">Email*</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+              </div>
+              <div class="col-12">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" id="phone" name="phone">
+              </div>
+              <div class="col-12">
+                <label for="subject" class="form-label">Subject*</label>
+                <select class="form-select" id="subject" name="subject" required>
+                  <option value="" selected disabled>Select a subject</option>
+                  <option value="Admissions">Admissions Inquiry</option>
+                  <option value="Admissions">Vacancy</option>
+                  <option value="General">General Information</option>
+                  <option value="Feedback">Feedback/Suggestions</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <label for="message" class="form-label">Message*</label>
+                <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+              </div>
+              <div class="col-12">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="consent" required>
+                  <label class="form-check-label" for="consent">
+                    I consent to Paradise Model School contacting me about my inquiry*
+                  </label>
+                </div>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        
+        <!-- Map & Social Media -->
+        <div class="col-lg-6">
+          <!-- Google Map Embed -->
+          <div class="map-container mb-4">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215256018103!2d-73.987844924525!3d40.74844097138989!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQ0JzU0LjQiTiA3M8KwNTknMTQuMiJX!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" 
+                    width="100%" 
+                    height="300" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy"></iframe>
+          </div>
+          
+          <!-- Social Media -->
+          <div class="contact-card p-4">
+            <h3 class="mb-4">Connect With Us</h3>
+            <div class="d-flex flex-wrap">
+              <a href="https://facebook.com/your-school" class="social-icon mb-2" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="https://twitter.com/your-school" class="social-icon mb-2" target="_blank">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="https://instagram.com/your-school" class="social-icon mb-2" target="_blank">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="https://linkedin.com/company/your-school" class="social-icon mb-2" target="_blank">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://youtube.com/your-school" class="social-icon mb-2" target="_blank">
+                <i class="fab fa-youtube"></i>
+              </a>
+            </div>
+            
+            <!-- Emergency Contact -->
+            <div class="mt-4 pt-3 border-top">
+              <h4 class="mb-3">Emergency Contact</h4>
+              <p class="mb-1"><strong>24/7 Security:</strong> (234) 456-7899</p>
+              <p class="mb-0"><strong>After Hours:</strong> (234) 903 544 8295</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer (Consistent with other pages) -->
+  <footer class="py-4 bg-dark text-white">
+    <div class="container text-center">
+      <p>&copy; 2025 Paradise Model School. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Form Submission Success Handler -->
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const formData = new FormData(form);
+      
+      // Simple client-side validation
+      if (!formData.get('name') || !formData.get('email') || !formData.get('message')) {
+        alert('Please fill in all required fields.');
+        return;
+      }
+      
+      // Send form data using FormSubmit.co
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          alert('Thank you! Your message has been sent successfully.');
+          form.reset();
+        } else {
+          throw new Error('Network response was not ok');
+        }
+      })
+      .catch(error => {
+        alert('There was a problem sending your message. Please try again later or contact us directly at info@paradisemodelschool.edu');
+        console.error('Error:', error);
+      });
+    });
+  </script>
+</body>
+</html>
