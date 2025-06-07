@@ -3,160 +3,378 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Student Login | Paradise Model School</title>
+  <title>Greenwood High - 25 Years of Excellence</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary-color: #2c3e50;
+      --secondary-color: #e74c3c;
       --accent-color: #3498db;
+      --gold-color: #d4af37;
     }
     
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f8f9fa;
+      font-family: 'Montserrat', sans-serif;
+      color: #333;
+      overflow-x: hidden;
     }
     
-    .login-header {
-      background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), 
-                  url('https://via.placeholder.com/1920x600?text=Student+Login') center/cover;
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+    }
+    
+    /* Hero Section */
+    .hero-section {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                  url('https://via.placeholder.com/1920x1080?text=School+Campus') center/cover;
       color: white;
-      padding: 100px 0;
+      padding: 180px 0 120px;
+      position: relative;
     }
     
-    .login-card {
-      max-width: 500px;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      border: none;
+    .hero-section::after {
+      content: "25";
+      position: absolute;
+      font-size: 25rem;
+      font-weight: 900;
+      color: rgba(212, 175, 55, 0.1);
+      bottom: -80px;
+      right: -50px;
+      line-height: 1;
+      z-index: 0;
     }
     
-    .btn-login {
-      background-color: var(--accent-color);
+    .anniversary-badge {
+      background-color: var(--gold-color);
+      color: var(--primary-color);
+      display: inline-block;
+      padding: 8px 20px;
+      border-radius: 30px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      animation: pulse 2s infinite;
+    }
+    
+    /* Features Section */
+    .feature-icon {
+      font-size: 2.5rem;
+      color: var(--secondary-color);
+      margin-bottom: 15px;
+    }
+    
+    /* Timeline */
+    .timeline-item {
+      position: relative;
+      padding-left: 80px;
+      margin-bottom: 40px;
+    }
+    
+    .timeline-year {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 60px;
+      height: 60px;
+      background: var(--gold-color);
       color: white;
-      font-weight: 600;
-      padding: 10px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    
+    /* Testimonials */
+    .testimonial-card {
+      border-left: 4px solid var(--gold-color);
+    }
+    
+    /* Animations */
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    
+    .fade-in {
+      animation: fadeIn 1.5s ease-in;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
   </style>
 </head>
 <body>
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: var(--primary-color);">
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: var(--primary-color);">
     <div class="container">
-      <a class="navbar-brand" href="index.html">
-        <i class="fas fa-school me-2"></i> Paradise Model School
+      <a class="navbar-brand" href="#">
+        <i class="fas fa-school me-2"></i>Greenwood High
       </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="academics.html">Academics</a></li>
+          <li class="nav-item"><a class="nav-link" href="anniversary.html">25th Anniversary</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
 
-  <!-- Login Header -->
-  <header class="login-header text-center">
-    <div class="container">
-      <h1 class="display-5 fw-bold mb-3">Student Portal</h1>
-      <p class="lead">Sign in to access your dashboard</p>
+  <!-- Hero Section -->
+  <section class="hero-section text-center">
+    <div class="container position-relative" style="z-index: 1;">
+      <div class="anniversary-badge fade-in">
+        <i class="fas fa-medal me-2"></i>Celebrating 25 Years
+      </div>
+      <h1 class="display-3 fw-bold mb-4">Building Futures Since 1999</h1>
+      <p class="lead mb-5">Join us in commemorating a quarter-century of academic excellence, innovation, and community</p>
+      <a href="anniversary.html" class="btn btn-warning btn-lg me-3">
+        <i class="fas fa-calendar-alt me-2"></i>Anniversary Events
+      </a>
+      <a href="about.html" class="btn btn-outline-light btn-lg">
+        <i class="fas fa-history me-2"></i>Our Story
+      </a>
     </div>
-  </header>
+  </section>
 
-  <!-- Login Form -->
+  <!-- Quick Stats -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-3">
+          <h2 class="display-4 fw-bold text-primary">25</h2>
+          <p>Years of Excellence</p>
+        </div>
+        <div class="col-md-3">
+          <h2 class="display-4 fw-bold text-primary">5,000+</h2>
+          <p>Students Educated</p>
+        </div>
+        <div class="col-md-3">
+          <h2 class="display-4 fw-bold text-primary">320+</h2>
+          <p>Faculty Members</p>
+        </div>
+        <div class="col-md-3">
+          <h2 class="display-4 fw-bold text-primary">47</h2>
+          <p>National Awards</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Anniversary Highlights -->
   <section class="py-5">
     <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold">Our Legacy Timeline</h2>
+        <p class="text-muted">Milestones that shaped our journey</p>
+      </div>
+      
       <div class="row justify-content-center">
-        <div class="col-md-8 col-lg-6">
-          <div class="login-card card p-4 p-md-5">
-            <h3 class="text-center mb-4">
-              <i class="fas fa-sign-in-alt me-2"></i> Student Login
-            </h3>
-            <form id="studentLoginForm">
-              <div class="mb-3">
-                <label for="studentId" class="form-label">Student ID</label>
-                <input type="text" class="form-control" id="studentId" required>
-              </div>
-              <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" required>
-              </div>
-              <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="rememberMe">
-                <label class="form-check-label" for="rememberMe">Remember me</label>
-              </div>
-              <button type="submit" class="btn btn-login w-100" id="loginBtn">
-                <span id="loginBtnText">Login</span>
-                <span id="loginSpinner" class="spinner-border spinner-border-sm d-none"></span>
-              </button>
-              <div class="text-center mt-3">
-                <a href="#" class="text-muted small">Forgot password?</a>
-              </div>
-            </form>
+        <div class="col-lg-8">
+          <div class="timeline-item">
+            <div class="timeline-year">1999</div>
+            <div class="timeline-content">
+              <h4>Humble Beginnings</h4>
+              <p>Founded with just 50 students in a small building, our commitment to quality education began.</p>
+              <img src="https://via.placeholder.com/600x400?text=Original+Building" alt="Original building" class="img-fluid rounded mt-2">
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-year">2005</div>
+            <div class="timeline-content">
+              <h4>First State Recognition</h4>
+              <p>Awarded "Best Emerging School" for innovative teaching methods.</p>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-year">2012</div>
+            <div class="timeline-content">
+              <h4>Campus Expansion</h4>
+              <p>Opened new science wing and sports complex to enhance student development.</p>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-year">2024</div>
+            <div class="timeline-content">
+              <h4>Silver Jubilee</h4>
+              <p>Celebrating 25 years with over 3,200 successful alumni worldwide.</p>
+              <img src="https://via.placeholder.com/600x400?text=Current+Campus" alt="Current campus" class="img-fluid rounded mt-2">
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-dark text-white py-4">
+  <!-- Features -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold">Why Choose Greenwood High?</h2>
+      </div>
+      <div class="row">
+        <div class="col-md-4 mb-4 text-center">
+          <div class="feature-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <h4>Proven Excellence</h4>
+          <p>25 years of consistent academic achievements and student success stories.</p>
+        </div>
+        <div class="col-md-4 mb-4 text-center">
+          <div class="feature-icon">
+            <i class="fas fa-atom"></i>
+          </div>
+          <h4>Modern Facilities</h4>
+          <p>State-of-the-art labs and technology-enhanced classrooms.</p>
+        </div>
+        <div class="col-md-4 mb-4 text-center">
+          <div class="feature-icon">
+            <i class="fas fa-heart"></i>
+          </div>
+          <h4>Holistic Development</h4>
+          <p>Focus on academics, arts, sports, and character building.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold">Alumni Voices</h2>
+        <p class="text-muted">Hear from those who walked these halls</p>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="testimonial-card p-4 h-100">
+            <div class="mb-3">
+              <img src="https://via.placeholder.com/100?text=Alumni+1" alt="Alumni" class="rounded-circle me-3" width="60">
+              <div class="d-inline-block">
+                <h5 class="mb-0">Sarah Johnson</h5>
+                <small class="text-muted">Class of 2010, Surgeon</small>
+              </div>
+            </div>
+            <p>"Greenwood gave me not just knowledge, but the confidence to pursue my dreams. The foundation I built here carried me through medical school."</p>
+          </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+          <div class="testimonial-card p-4 h-100">
+            <div class="mb-3">
+              <img src="https://via.placeholder.com/100?text=Alumni+2" alt="Alumni" class="rounded-circle me-3" width="60">
+              <div class="d-inline-block">
+                <h5 class="mb-0">Michael Chen</h5>
+                <small class="text-muted">Class of 2015, Tech Entrepreneur</small>
+              </div>
+            </div>
+            <p>"The critical thinking skills I developed at Greenwood were crucial for my startup journey. Teachers here truly care about each student's growth."</p>
+          </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+          <div class="testimonial-card p-4 h-100">
+            <div class="mb-3">
+              <img src="https://via.placeholder.com/100?text=Alumni+3" alt="Alumni" class="rounded-circle me-3" width="60">
+              <div class="d-inline-block">
+                <h5 class="mb-0">Priya Patel</h5>
+                <small class="text-muted">Class of 2018, Environmental Scientist</small>
+              </div>
+            </div>
+            <p>"Coming back for the 25th anniversary fills me with pride. The values I learned here guide my work in sustainability every day."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Anniversary CTA -->
+  <section class="py-5 bg-warning text-dark">
     <div class="container text-center">
-      <p class="mb-0">&copy; 2025 Paradise Model School. All rights reserved.</p>
+      <h2 class="display-5 fw-bold mb-4">Join the Celebration!</h2>
+      <p class="lead mb-5">Special events throughout the year to commemorate our silver jubilee</p>
+      <a href="anniversary.html" class="btn btn-dark btn-lg me-3">
+        <i class="fas fa-calendar-day me-2"></i>Event Schedule
+      </a>
+      <a href="contact.html" class="btn btn-outline-dark btn-lg">
+        <i class="fas fa-gift me-2"></i>Share Your Story
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-4 bg-dark text-white">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <h5><i class="fas fa-school me-2"></i>Greenwood High</h5>
+          <p>Celebrating 25 years of educational excellence and innovation.</p>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-white">Home</a></li>
+            <li><a href="about.html" class="text-white">About Us</a></li>
+            <li><a href="anniversary.html" class="text-white">25th Anniversary</a></li>
+            <li><a href="contact.html" class="text-white">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h5>Connect</h5>
+          <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <hr class="my-4 bg-light">
+      <div class="text-center">
+        <p class="mb-0">&copy; 2024 Greenwood High School. Celebrating 25 years.</p>
+      </div>
     </div>
   </footer>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Login Script -->
   <script>
-    document.getElementById('studentLoginForm').addEventListener('submit', async (e) => {
-      e.preventDefault();
+    // Simple animation for elements
+    document.addEventListener('DOMContentLoaded', function() {
+      const animateElements = document.querySelectorAll('.timeline-item, .feature-icon, .testimonial-card');
       
-      const btn = document.getElementById('loginBtn');
-      const spinner = document.getElementById('loginSpinner');
-      const btnText = document.getElementById('loginBtnText');
-      
-      // Show loading state
-      btn.disabled = true;
-      spinner.classList.remove('d-none');
-      btnText.textContent = 'Authenticating...';
-      
-      try {
-        const response = await fetch('/.netlify/functions/auth/login', {
-          method: 'POST',
-          headers: { 
-            'Content-Type': 'application/json' 
-          },
-          body: JSON.stringify({
-            studentId: document.getElementById('studentId').value,
-            password: document.getElementById('password').value
-          })
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = 'translateY(0)';
+          }
         });
-
-        const data = await response.json();
-        
-        if (!response.ok) {
-          throw new Error(data.error || 'Login failed');
-        }
-        
-        // Save token and redirect
-        localStorage.setItem('token', data.token);
-        localStorage.setItem('user', JSON.stringify(data.user));
-        window.location.href = '/student-portal/';
-        
-      } catch (err) {
-        console.error('Login error:', err);
-        alert(err.message || 'Login failed. Please try again.');
-      } finally {
-        // Reset button state
-        btn.disabled = false;
-        spinner.classList.add('d-none');
-        btnText.textContent = 'Login';
-      }
+      }, { threshold: 0.1 });
+      
+      animateElements.forEach(el => {
+        el.style.opacity = 0;
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'all 0.6s ease';
+        observer.observe(el);
+      });
     });
-
-    // Check if already logged in
-    if (localStorage.getItem('token')) {
-      window.location.href = '/student-portal/';
-    }
   </script>
 </body>
-  </html>
+        </html>
